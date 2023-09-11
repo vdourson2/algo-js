@@ -12,5 +12,6 @@ let multiRand = (n) => {
     return arrayRandomNumbers;
 }
 
+//Ask how many random numbers you want
 let num = Number(prompt("How many numbers do you need?"));
 alert(multiRand(num));
