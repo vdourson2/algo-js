@@ -44,7 +44,7 @@ function collidings(arrayRect) {
             let rect1 = arrayRect.splice(0,1);//Suppress first element of the array
             let collidesWith = arrayRect.filter((nextRectangle) => rect1[0].collides(nextRectangle));//Keep only rectangles that collide with the first one
             collidesWith.forEach((el, i) => {
-                ul.appendChild(document.createElement("li")).textContent = `Rectangle ${rect1[0].index} collides with rectangle ${collidesWith[i].index}`;
+                ul.appendChild(document.createElement("li")).textContent = `Rectangle ${rect1[0].index} with rectangle ${collidesWith[i].index}`;
             });
         }
     }
