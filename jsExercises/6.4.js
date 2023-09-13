@@ -1,3 +1,5 @@
+//This extra displays the rectangles with canvas
+
 //This class creat rectangles with topLeftXPos, topLeftYPos, width and length as parameters
 class Rectangle {
     constructor(topLeftXPos, topLeftYPos, width, length){
@@ -15,16 +17,18 @@ class Rectangle {
     }
 }
 
-//This function generate a random number between 0 and 20, with two decimals
-function randomN(){
-    return Math.floor(Math.random()*2000)/100;
+//This function takes as argument an integer "size",
+// and generate a random integer between 0 and "size".
+function randomN(size){
+    return Math.floor(Math.random()*size);
 }
+
 
 //This function generates an array of n rectangles with random positions and sizes.
 function generateRect(n) {
     let rectangles = [];
     for (let i=0; i<n; i++) {
-        let r = new Rectangle(randomN(),randomN(),randomN(),randomN());
+        let r = new Rectangle(randomN(200),randomN(200),randomN(50)+50,randomN(50)+50);
         rectangles.push(r);
     }
     return rectangles;
@@ -48,8 +52,26 @@ function collidings(arrayRect) {
 //Generate an array of rectangles
 let arrayRectangles = generateRect(3);
 console.log("The array with rectangles is : ");
-console.log(arrayRectangles);
+console.table(arrayRectangles);
 
 //Search and display colliding rectangles
-collidings(arrayRectangles);
+let arrayToSort = [...arrayRectangles];
+collidings(arrayToSort);
 
+
+//Display rectangles in canvas
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+
+(function draw(){
+    for (let el of arrayRectangles) {
+        ctx.fillStyle = `rgba(${randomN(256)},${randomN(256)},${randomN(256)},0.5)`;
+        ctx.fillRect(el.topLeftXPos,el.topLeftYPos,el.width,el.length);
+    }
+})();
+
+//This function takes as argument an integer "size",
+// and generate a random integer between 0 and "size".
+function randomN(size){
+    return Math.floor(Math.random()*size);
+}

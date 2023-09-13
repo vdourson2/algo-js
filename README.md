@@ -12,7 +12,7 @@ Becode exercise : learn the basics of algorithmics with JavaScript :
 
 ## Extras
 Figure of rectangles used to test exercise 6.2 :
-![Schema rectangle](SchemaRectanglesEx6_2.png)
+![Schema rectangle](assets/SchemaRectanglesEx6_2.png)
 
 ## Used languages
 Javascript
