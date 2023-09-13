@@ -1,5 +1,4 @@
-//Create a program that will re-use the Rectangle class you created previously. 
-//It should generate 1000 random instances of Rectangle with random positions and sizes. 
+
 //Then it will display all colliding rectangles amongst those that were generated that way.
 
 //This class creat rectangles with topLeftXPos, topLeftYPos, width and length as parameters
@@ -24,7 +23,7 @@ function randomN(){
     return Math.floor(Math.random()*2000)/100;
 }
 
-//This function generates an array of n rectangles
+//This function generates an array of n rectangles with random positions and sizes.
 function generateRect(n) {
     let rectangles = [];
     for (let i=0; i<n; i++) {
@@ -33,23 +32,15 @@ function generateRect(n) {
     }
     return rectangles;
 }
+let arrayRectangles = generateRect(3);
+console.log(arrayRectangles);
 
-console.log(generateRect(3));
+for (var ind in arrayRectangles) {
+    if (arrayRectangles.length > 1) {
+        let rect1 = arrayRectangles.splice(0,1);
+        let collidesWith = arrayRectangles.filter((nextRectangle) => rect1[0].collides(nextRectangle));
+        console.log("Rectangle " + ind + " collides with : " );
+        console.log(collidesWith);
+    }
+}
 
-// let greenRect = new Rectangle(3,6,4,3);
-// let redRect = new Rectangle(8,5,2,5);
-// let purpleRect = new Rectangle(0,9,2,1);
-// let blueRect = new Rectangle(1,5,3,2);
-// let yellowRect = new Rectangle(4,8,3,2);
-
-// console.log("Green collides red?");
-// console.log(greenRect.collides(redRect));
-
-// console.log("Green collides purple?");
-// console.log(greenRect.collides(purpleRect));
-
-// console.log("Green collides blue?");
-// console.log(greenRect.collides(blueRect));
-
-// console.log("Green collides yellow?");
-// console.log(greenRect.collides(yellowRect));
