@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 canvas {
@@ -8,4 +9,8 @@ canvas {
     border: solid 3px #819b2c;
     margin: auto;
     color:red;
+}
+
+li {
+    list-style-type: none;
 }

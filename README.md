@@ -14,6 +14,8 @@ Becode exercise : learn the basics of algorithmics with JavaScript :
 Figure of rectangles used to test exercise 6.2 :
 ![Schema rectangle](assets/SchemaRectanglesEx6_2.png)
 
+Github page for the extra exercise 6.4 : https://vdourson2.github.io/algo-js/
+
 ## Used languages
 Javascript
 
