@@ -1,6 +1,4 @@
 
-//Then it will display all colliding rectangles amongst those that were generated that way.
-
 //This class creat rectangles with topLeftXPos, topLeftYPos, width and length as parameters
 class Rectangle {
     constructor(topLeftXPos, topLeftYPos, width, length){
@@ -48,8 +46,11 @@ function collidings(arrayRect) {
     }
 }
 
+//Generate an array of rectangles
 let arrayRectangles = generateRect(3);
 console.log("The array with rectangles is : ");
 console.log(arrayRectangles);
+
+//Search and display colliding rectangles
 collidings(arrayRectangles);
 
