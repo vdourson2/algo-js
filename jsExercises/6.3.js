@@ -33,6 +33,7 @@ function generateRect(n) {
     return rectangles;
 }
 let arrayRectangles = generateRect(3);
+arrayRectangles.map((r,index) => r.index = index);
 console.log(arrayRectangles);
 
 for (var ind in arrayRectangles) {
@@ -40,6 +41,7 @@ for (var ind in arrayRectangles) {
         let rect1 = arrayRectangles.splice(0,1);
         let collidesWith = arrayRectangles.filter((nextRectangle) => rect1[0].collides(nextRectangle));
         console.log("Rectangle " + ind + " collides with : " );
+        collidesWith.forEach((el) => console.log(el.index));
         console.log(collidesWith);
     }
 }
