@@ -32,17 +32,24 @@ function generateRect(n) {
     }
     return rectangles;
 }
-let arrayRectangles = generateRect(3);
-arrayRectangles.map((r,index) => r.index = index);
-console.log(arrayRectangles);
 
-for (var ind in arrayRectangles) {
-    if (arrayRectangles.length > 1) {
-        let rect1 = arrayRectangles.splice(0,1);
-        let collidesWith = arrayRectangles.filter((nextRectangle) => rect1[0].collides(nextRectangle));
-        console.log("Rectangle " + ind + " collides with : " );
-        collidesWith.forEach((el) => console.log(el.index));
-        console.log(collidesWith);
+//This function takes an array of objects of the class "Rectangle" 
+//and displays all colliding rectangles in this array .
+function collidings(arrayRect) {
+    arrayRect.map((r,index) => r.index = index);
+    for (var ind in arrayRect) {
+        if (arrayRect.length > 1) {
+            let rect1 = arrayRect.splice(0,1);
+            let collidesWith = arrayRect.filter((nextRectangle) => rect1[0].collides(nextRectangle));
+            console.log("Rectangle " + ind + " collides with : " );
+            collidesWith.forEach((el) => console.log(el.index));
+            console.log(collidesWith);
+        }
     }
 }
+
+let arrayRectangles = generateRect(3);
+console.log("The array with rectangles is : ");
+console.log(arrayRectangles);
+collidings(arrayRectangles);
 
